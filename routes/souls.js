@@ -4,7 +4,7 @@ const db = require('../db')
 exports.soulsGetAll = async (req, res, next) => {
     db.query('SELECT * FROM souls', (err, result) => {
       if (err) {
-        return next(err);
+        res.status(500).send(err);
       }
       else {
         res.send(result);

@@ -10,7 +10,7 @@ class SoulDrainer extends React.Component {
     }
 
     drainSoul() {
-        fetch(`/souls/${this.state.amount}`, {method: "DELETE"})
+        fetch(`/api/souls/${this.state.amount}`, {method: "DELETE"})
             .then(() => {
                 this.props.fetchSoulCount();
                 this.props.toggleRecentlyCaptured();

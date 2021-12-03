@@ -24,7 +24,7 @@ class SoulManager extends React.Component {
     }
 
     removeSoul(name) {
-        fetch(`/souls?name=${name}`, {method: 'DELETE'})
+        fetch(`/api/souls?name=${name}`, {method: 'DELETE'})
             .then(() => {
                 this.getSouls();
             })

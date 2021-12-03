@@ -4,7 +4,7 @@ const db = require('../db')
 exports.minionsGetAll = async (req, res, next) => {
   db.query('SELECT * FROM minions', (err, result) => {
     if (err) {
-      return next(err);
+      res.status(500).send(err);
     }
     else if (result.rowCount === 0) {
       res.send(result);
