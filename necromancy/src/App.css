@@ -1,0 +1,222 @@
+.App {
+  display: grid;
+  grid-template-columns: 5fr 15fr 5fr;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "header header header"
+    "selector selector selector"
+    "conCap statblock image"
+    "conCap statblock image"
+    "minionList description dScryb"
+    "minionList description dScryb"
+    "soulManager description .";
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.Header {
+  grid-area: header;
+  justify-self: center;
+  font-size: 38px;
+  color: #456545;
+  font-family: 'Creepster';
+  padding: 8px 128px; 
+  margin: 30px 60px;
+  border: 2px solid #456545;
+}
+
+.soulCounter {
+  grid-area: header;
+  justify-self: flex-start;
+  display: flex;
+  flex-flow: column nowrap;
+  margin: 30px 100px;
+}
+
+.Souls {
+  font-family: 'Creepster';
+  font-size: 28px;
+  color: #456545;
+}
+
+.count {
+  font-family: 'Creepster';
+  font-size: 28px;
+  align-self: center;
+  color: #456545;
+}
+
+.Selector {
+  grid-area: selector;
+  justify-self: stretch;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border: 2px solid #456545;
+  margin: 0px 10px;
+}
+
+.selectorItem {
+  padding: 8px 30px; 
+}
+
+.conCap {
+  grid-area: conCap;
+  /* align-self: center; */
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  margin-right: 70px;
+  margin-left: 20px;
+}
+
+#minions {
+  height: 40px;
+  border-radius: 10px;
+  margin-bottom:15px;
+  text-align: center;
+}
+
+.minionConjurer {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+#soulName {
+  height: 40px;
+  border-radius: 10px;
+  margin-bottom:15px;
+  text-align: center;
+}
+
+.soulGatherer {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+#soulAmount {
+  height: 40px;
+  border-radius: 10px;
+  margin-bottom:15px;
+  text-align: center;
+}
+
+.soulDrainer {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.statBlock {
+  grid-area: statblock;
+  padding-top: 30px;
+  justify-self: center;
+}
+
+.Image {
+  grid-area: image;
+  padding-top: 30px;
+  justify-self: center;
+}
+
+.minionViewer {
+  grid-area: minionList;
+  justify-self: stretch;
+  border: 2px solid #456545;
+  margin-bottom: 30px;
+  margin-left: 10px;
+}
+
+.minionRow {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+h3 {
+  margin-block-start: 5px;
+  margin-block-end: 5px;
+  padding-left: 10px;
+}
+
+.minionReDeceaser {
+  justify-self: flex-end;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.soulManager {
+  grid-area: soulManager;
+  justify-self: stretch;
+  border: 2px solid #456545;
+  margin-bottom: 30px;
+  margin-left: 10px;
+  max-height: 300px;
+  overflow-y: scroll;
+}
+
+.soulRow {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.soulRemover {
+  justify-self: flex-end;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.Description {
+  grid-area: description;
+  justify-self: stretch;
+  border: 2px solid #456545;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 30px;
+  padding: 10px;
+}
+
+.dScryb {
+  grid-area: dScryb;
+  justify-self: stretch;
+  border: 2px solid #456545;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 30px;
+  padding: 10px;
+}
