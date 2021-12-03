@@ -10,7 +10,7 @@ exports.soulsGetAll = async (req, res, next) => {
         res.send(result);
       }
     });
-    db.end();
+    // db.end();
   }
 
 exports.soulsPostSoul = async (req, res, next) => {

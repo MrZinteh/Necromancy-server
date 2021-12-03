@@ -11,7 +11,7 @@ class SoulManager extends React.Component {
 
     getSouls() {
         this.setState({ loading: true })
-        fetch(`/souls`)
+        fetch(`/api/souls`)
             .then((res) => res.json())
             .then((data) => {
                 if(data.rowCount > 0) {
