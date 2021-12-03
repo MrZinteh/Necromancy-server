@@ -9,7 +9,7 @@ const app = express();
 
 app.use(express.static(path.resolve(__dirname, '../necromancy/build')));
 
-app.use('/', router);
+app.use('/api', router);
 
 app.use((err, req, res, next) => {
   console.error(err.stack)
