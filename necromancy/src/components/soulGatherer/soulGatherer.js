@@ -10,7 +10,7 @@ class SoulGatherer extends React.Component {
     }
 
     conjureSoul() {
-        fetch(`/api/souls?name=${this.state.input}`, {
+        fetch(`/souls?name=${this.state.input}`, {
             headers: {
               'Accept': 'application/json',
               'Content-Type': 'application/json'

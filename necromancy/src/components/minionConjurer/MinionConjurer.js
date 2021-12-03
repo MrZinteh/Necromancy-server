@@ -17,7 +17,7 @@ class MinionConjurer extends React.Component {
     }
 
     handleClick() {
-        fetch(`/api/minions?type=${this.state.minionType}`, {
+        fetch(`/minions?type=${this.state.minionType}`, {
             headers: {
               'Accept': 'application/json',
               'Content-Type': 'application/json'

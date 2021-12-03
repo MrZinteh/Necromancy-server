@@ -11,7 +11,7 @@ class SoulManager extends React.Component {
 
     getSouls() {
         this.setState({ loading: true })
-        fetch(`/api/souls`)
+        fetch(`/souls`)
             .then((res) => res.json())
             .then((data) => {
                 if(data.rowCount > 0) {
@@ -24,7 +24,7 @@ class SoulManager extends React.Component {
     }
 
     removeSoul(name) {
-        fetch(`/api/souls?name=${name}`, {method: 'DELETE'})
+        fetch(`/souls?name=${name}`, {method: 'DELETE'})
             .then(() => {
                 this.getSouls();
             })

@@ -11,7 +11,7 @@ class MinionViewer extends React.Component {
 
     getMinions() {
         this.setState({ loading: true })
-        fetch(`/api/minions/${this.props.minionType}`)
+        fetch(`/minions/${this.props.minionType}`)
             .then((res) => res.json())
             .then((data) => {
                 if(data.rowCount > 0) {
@@ -24,7 +24,7 @@ class MinionViewer extends React.Component {
     }
 
     reDecease(name) {
-        fetch(`/api/minions?name=${name}`, {method: 'DELETE'})
+        fetch(`/minions?name=${name}`, {method: 'DELETE'})
             .then(() => {
                 this.getMinions();
             })
