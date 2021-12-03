@@ -4,6 +4,7 @@ const db = require('../db')
 exports.soulsGetAll = async (req, res, next) => {
     db.query('SELECT * FROM souls', (err, result) => {
       if (err) {
+        console.log(err);
         res.status(500).send(err);
       }
       else {
@@ -28,7 +29,7 @@ exports.soulsPostSoul = async (req, res, next) => {
 exports.soulsCountSouls = async (req, res, next) => {
   db.query('SELECT COUNT(*) FROM souls', (err, result) => {
     if (err) {
-      res.status(404).send(err);
+      res.status(500).send(err);
     } else {
       res.status(200).json(result.rows[0]);
     }

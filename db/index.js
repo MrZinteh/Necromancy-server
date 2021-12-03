@@ -24,7 +24,11 @@ const client = new Client({
   },
 });
 
-client.connect();
+client.connect(err => {
+  if (err) {
+    console.error('connection error', err.stack)
+  }
+});
 
 module.exports = {
   query: (text, params, callback) => {
