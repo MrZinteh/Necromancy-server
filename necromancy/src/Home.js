@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import SoulGatherer from './components/soulGatherer/soulGatherer';
 import Header from './components/header/Header';
 import Selector from './components/selector/Selector';
@@ -12,17 +11,15 @@ import Description from './components/description/Description';
 import DScryb from './components/dScryb/DScryb';
 import SoulManager from './components/soulManager/SoulManager';
 import SoulDrainer from './components/soulDrainer/SoulDrainer';
-import { Login } from './components/login/Login';
 
-class App extends React.Component {
+class Home extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { selectedMinion: "Skeleton", count: "0", recentlyConjured: false, recentlyCaptured: false, login: false };
+    this.state = { selectedMinion: "Skeleton", count: "0", recentlyConjured: false, recentlyCaptured: false };
     this.selectMinion = this.selectMinion.bind(this);
     this.fetchSoulCount = this.fetchSoulCount.bind(this);
     this.toggleRecentlyConjured = this.toggleRecentlyConjured.bind(this);
     this.toggleRecentlyCaptured = this.toggleRecentlyCaptured.bind(this);
-    this.login = this.login.bind(this);
   }
 
   selectMinion(e) {
@@ -47,26 +44,16 @@ class App extends React.Component {
     this.fetchSoulCount();
   }
 
-  login() {
-    this.setState({ login: true });
-  }
-
   render() {
-      if(!this.state.login) {
-        return (
-          <Login login={ this.login }/>
-        );
-      }
-      else {
-        return (
-          <div className="App">
+      return (
+        <div classname="Home">
             <SoulCounter count={ this.state.count }/>
             <Header />
             <Selector selectMinion={ this.selectMinion } selectedMinion = { this.state.selectedMinion }/>
             <div className="conCap">
-              <MinionConjurer toggleRecentlyConjured={ this.toggleRecentlyConjured }/>
-              <SoulGatherer fetchSoulCount={ this.fetchSoulCount } toggleRecentlyCaptured={ this.toggleRecentlyCaptured }/>
-              <SoulDrainer fetchSoulCount={ this.fetchSoulCount } toggleRecentlyCaptured={ this.toggleRecentlyCaptured }/>
+                <MinionConjurer toggleRecentlyConjured={ this.toggleRecentlyConjured }/>
+                <SoulGatherer fetchSoulCount={ this.fetchSoulCount } toggleRecentlyCaptured={ this.toggleRecentlyCaptured }/>
+                <SoulDrainer fetchSoulCount={ this.fetchSoulCount } toggleRecentlyCaptured={ this.toggleRecentlyCaptured }/>
             </div>
             <StatBlock minionType={ this.state.selectedMinion }/>
             <Image minionType={ this.state.selectedMinion }/>
@@ -74,10 +61,9 @@ class App extends React.Component {
             <SoulManager recentlyCaptured={ this.state.recentlyCaptured } toggleRecentlyCaptured={ this.toggleRecentlyCaptured } fetchSoulCount={ this.fetchSoulCount }/>
             <Description minionType={ this.state.selectedMinion }/>
             <DScryb minionType={ this.state.selectedMinion }/>
-          </div>
-        )
-      }
+        </div>
+    )
   }
 }
 
-export default App;
+export default Home;

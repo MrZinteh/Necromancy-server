@@ -48,7 +48,7 @@ class SoulManager extends React.Component {
                 <h3>Souls:</h3>
                 { this.state.loading ? "Loading..." : 
                     (this.state.result.length === 0 ) ? `No souls found` : 
-                        this.state.result.map((row) => <div className="soulRow"><p>{row.soul_name}</p> <SoulRemover onClick={() => this.removeSoul(row.soul_name)} /></div>)}
+                        this.state.result.map((row) => <div className="soulRow" key={row.soul_name}><p>{row.soul_name}</p> <SoulRemover onClick={() => this.removeSoul(row.soul_name)} /></div>)}
             </div>
         );
     }

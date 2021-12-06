@@ -50,7 +50,7 @@ class MinionViewer extends React.Component {
                 <h3>Minions:</h3>
                 { this.state.loading ? "Loading..." : 
                     (this.state.result.length === 0 ) ? `No ${this.props.minionType}s found` : 
-                        this.state.result.map((row) => <div className="minionRow"><p>{row.minion_name}</p> <MinionReDeceaser onClick={() => this.reDecease(row.minion_name)} /></div>)}
+                        this.state.result.map((row) => <div className="minionRow" key={row.minion_name}><p>{row.minion_name}</p> <MinionReDeceaser onClick={() => this.reDecease(row.minion_name)} /></div>)}
             </div>
         );
     }
