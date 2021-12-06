@@ -11,7 +11,6 @@ exports.soulsGetAll = async (req, res, next) => {
         res.send(result);
       }
     });
-    // db.end();
   }
 
 exports.soulsPostSoul = async (req, res, next) => {
@@ -23,7 +22,6 @@ exports.soulsPostSoul = async (req, res, next) => {
       res.status(200).json({soul_name: name});
     }
   });
-  db.end();
 }
 
 exports.soulsCountSouls = async (req, res, next) => {
@@ -34,7 +32,6 @@ exports.soulsCountSouls = async (req, res, next) => {
       res.status(200).json(result.rows[0]);
     }
   });
-  db.end();
 }
 
 exports.soulsDeleteSouls = async (req, res, next) => {
@@ -60,7 +57,6 @@ exports.soulsDeleteSouls = async (req, res, next) => {
       });
     }
   });
-  db.end();
 }
 
 exports.soulsDeleteRandomSouls = async (req, res, next) => {
@@ -101,5 +97,4 @@ exports.soulsDeleteRandomSouls = async (req, res, next) => {
       });
     }
   });
-  db.end();
 }

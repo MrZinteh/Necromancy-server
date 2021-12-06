@@ -13,7 +13,6 @@ exports.minionsGetAll = async (req, res, next) => {
       res.send(result.rows);
     }
   });
-  db.end();
 }
 
 exports.minionsGetByType = async (req, res, next) => {
@@ -26,7 +25,6 @@ exports.minionsGetByType = async (req, res, next) => {
       res.send(result);
     }
   });
-  db.end();
 }
 
 exports.minionsPostMinion = async (req, res, next) => {
@@ -76,7 +74,6 @@ exports.minionsPostMinion = async (req, res, next) => {
       });
     }
   });
-  db.end();
 }
 
 exports.minionsDeleteMinion = async (req, res, next) => {
@@ -89,5 +86,4 @@ exports.minionsDeleteMinion = async (req, res, next) => {
       res.status(200).send(result);
     }
   });
-  db.end();
 }

@@ -7,7 +7,9 @@ const PORT = process.env.PORT || 3001;
 
 const app = express();
 
-app.use(express.static(path.resolve(__dirname, '../necromancy/build')));
+if (process.env.NODE_ENV === "production"){
+  app.use(express.static(path.resolve(__dirname, '../necromancy/build')));
+}
 
 app.use('/api', router);
 
