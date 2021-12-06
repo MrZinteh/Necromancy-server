@@ -59,7 +59,7 @@ class App extends React.Component {
         <StatBlock minionType={ this.state.selectedMinion }/>
         <Image minionType={ this.state.selectedMinion }/>
         <MinionViewer minionType={ this.state.selectedMinion } recentlyConjured= { this.state.recentlyConjured } toggleRecentlyConjured={ this.toggleRecentlyConjured }/>
-        <SoulManager recentlyCaptured={ this.state.recentlyCaptured } toggleRecentlyCaptured={ this.toggleRecentlyCaptured }/>
+        <SoulManager recentlyCaptured={ this.state.recentlyCaptured } toggleRecentlyCaptured={ this.toggleRecentlyCaptured } fetchSoulCount={ this.fetchSoulCount }/>
         <Description minionType={ this.state.selectedMinion }/>
         <DScryb minionType={ this.state.selectedMinion }/>
       </div>

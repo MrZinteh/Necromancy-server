@@ -20,6 +20,7 @@ class SoulManager extends React.Component {
                 else {
                     this.setState({ result: [], loading: false });
                 }
+                this.props.fetchSoulCount();
             });
     }
 
