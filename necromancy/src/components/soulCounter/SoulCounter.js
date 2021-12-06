@@ -9,11 +9,11 @@ class SoulCounter extends React.Component {
 
     fetchSoulCount() {
         fetch(`/api/souls/count`)
-            .then((res) => {
-                console.log(res);
-                res.json();
-            })
-            .then((data) => this.setState({ count: data.count }));
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+                this.setState({ count: data.count })
+            });
     }
 
     componentDidMount() {
