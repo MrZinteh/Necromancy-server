@@ -93,11 +93,11 @@
   padding: 8px 30px; 
 }
 
-.soulRemover:hover
-.minionReDeceaser:hover
-.drainButton:hover
-.captureButton:hover
-.conjureButton:hover
+.soulRemover:hover,
+.minionReDeceaser:hover,
+.drainButton:hover,
+.captureButton:hover,
+.conjureButton:hover,
 .selectorItem:hover {
   cursor: pointer
 }
