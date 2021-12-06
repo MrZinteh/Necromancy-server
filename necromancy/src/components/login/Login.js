@@ -20,7 +20,7 @@ export class Login extends React.Component {
             <div className="login-container">
                 <img src={leftskull} alt="leftskull" className="leftskull"/>
                 <div className="login-wrapper">
-                    <h1>Prove that you have the gift...</h1>
+                    <h1>Prove that you know the secrets...</h1>
                     <p>Master's name</p>
                     <input type="text" placeholder="Name" onChange={(e) => this.setState({username: e.target.value})}/>
                     <p>Master's passphrase</p>
