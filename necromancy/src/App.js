@@ -50,7 +50,7 @@ class App extends React.Component {
       <div className="App">
         <SoulCounter count={ this.state.count }/>
         <Header />
-        <Selector selectMinion={ this.selectMinion }/>
+        <Selector selectMinion={ this.selectMinion } selectedMinion = { this.state.selectedMinion }/>
         <div className="conCap">
           <MinionConjurer toggleRecentlyConjured={ this.toggleRecentlyConjured }/>
           <SoulGatherer fetchSoulCount={ this.fetchSoulCount } toggleRecentlyCaptured={ this.toggleRecentlyCaptured }/>
