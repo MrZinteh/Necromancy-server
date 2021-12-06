@@ -19,7 +19,7 @@ exports.minionsGetByType = async (req, res, next) => {
   const type = req.params.type;
   db.query('SELECT * FROM minions WHERE minion_type=$1', [type], (err, result) => {
     if (err) {
-      return next(err);
+      res.status(500).send(err);
     }
     else {
       res.send(result);
